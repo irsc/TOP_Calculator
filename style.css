@@ -24,7 +24,7 @@ main{
     color: lightyellow;
     font-size: 2em;
     font-family: 'Courier New', Courier, monospace;
-    height: 2em;
+    height: 2.2em;
     margin-bottom: 0.5em;
     border-radius: 10px;
 
@@ -47,6 +47,15 @@ button:hover {
   }
 #equalBtn {
     width: 45%;
+}
+
+p{
+    margin:0;
+}
+
+.resultText{
+    text-align: right;
+    font-weight: bold;
 }
 
 .flex{

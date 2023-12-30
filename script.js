@@ -16,7 +16,9 @@ const divide = function(a, b){
 };
 
 //Variables
-let firstNumber, secondNumber, operator;
+let firstNumber ="";
+let secondNumber="";
+let  operator;
 
 const operation = function(a, b, operator){
     switch (operator) {
@@ -33,5 +35,38 @@ const operation = function(a, b, operator){
             break;
     }
 };
+
+//EventListeners
+
+const btn = document.querySelector(".buttonPad");
+const input =document.querySelector(".inputText");
+const result = document.querySelector(".resultText");
+
+btn.addEventListener("click",(e)=>{
+
+    if(e.target.dataset.number){
+        input.textContent += e.target.dataset.number;
+        if(!operator){
+            firstNumber += e.target.dataset.number;
+        }else if(firstNumber && operator){
+            secondNumber += e.target.dataset.number;
+        }
+    }
+
+    if(e.target.dataset.operator){
+        if(!operator){
+            operator = e.target.dataset.operator;
+            input.textContent += e.target.textContent;
+        }
+    }
+
+    if(e.target.dataset.operator == "equal"){
+        if(firstNumber && operator && secondNumber){
+            result.textContent = operation(firstNumber, secondNumber, operator);
+        }
+    }
+
+    
+});
 
 
