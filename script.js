@@ -1,4 +1,18 @@
-// Calcuator functions
+//Variables
+let firstNumber ="";
+let secondNumber="";
+let  operator;
+let decimal = false;
+let blockDelete = false;
+
+const screen = document.querySelector(".screen");
+const btn = document.querySelector(".buttonPad");
+const btnAC = document.querySelector("#AC");
+const btnDEL = document.querySelector("#DEL");
+const input =document.querySelector(".inputText");
+const result = document.querySelector(".resultText");
+
+// Calculator functions
 const add = function(a,b) {
     const numA = +a;
     const numB = +b;
@@ -16,13 +30,6 @@ const multiply = function(a, b) {
 const divide = function(a, b){
     return b==0 ? "MathError" : a/b;
 };
-
-//Variables
-let firstNumber ="";
-let secondNumber="";
-let  operator;
-let decimal = false;
-let blockDelete = false;
 
 const operation = function(a, b, operator){
     switch (operator) {
@@ -142,13 +149,6 @@ const padInput = function(e){
 }
 
 //EventListeners
-const screen = document.querySelector(".screen");
-const btn = document.querySelector(".buttonPad");
-const btnAC = document.querySelector("#AC");
-const btnDEL = document.querySelector("#DEL");
-const input =document.querySelector(".inputText");
-const result = document.querySelector(".resultText");
-
 btn.addEventListener("click",(e) =>padInput(e));
 btnAC.addEventListener("click",clearAll);
 btnDEL.addEventListener("click",deleteInput);
