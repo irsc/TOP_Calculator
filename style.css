@@ -7,7 +7,7 @@ main{
 }
 .calculator{
 
-    min-width: 30%;
+    width: 30%;
     padding: 2em;
     border-color: blue;
     border-style: solid;
@@ -28,7 +28,6 @@ main{
     min-height: 2.2em;
     margin-bottom: 0.5em;
     border-radius: 10px;
-    width: 10em;
 
 }
 
