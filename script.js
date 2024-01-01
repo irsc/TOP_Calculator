@@ -94,16 +94,7 @@ const getParameters = function(op, first, second, dec){
     decimal = dec;
 }
 
-//EventListeners
-const screen = document.querySelector(".screen");
-const btn = document.querySelector(".buttonPad");
-const btnAC = document.querySelector("#AC");
-const btnDEL = document.querySelector("#DEL");
-const input =document.querySelector(".inputText");
-const result = document.querySelector(".resultText");
-
-btn.addEventListener("click",(e)=>{
-
+const padInput = function(e){
     if(e.target.dataset.number){
         if(result.textContent && !operator){
             clearAll();
@@ -148,10 +139,18 @@ btn.addEventListener("click",(e)=>{
         }
     }
 
-    
-});
+}
 
-btnAC.addEventListener("click",()=>clearAll());
-btnDEL.addEventListener("click",()=>deleteInput());
+//EventListeners
+const screen = document.querySelector(".screen");
+const btn = document.querySelector(".buttonPad");
+const btnAC = document.querySelector("#AC");
+const btnDEL = document.querySelector("#DEL");
+const input =document.querySelector(".inputText");
+const result = document.querySelector(".resultText");
+
+btn.addEventListener("click",(e) =>padInput(e));
+btnAC.addEventListener("click",clearAll);
+btnDEL.addEventListener("click",deleteInput);
 
 
